@@ -3,11 +3,8 @@ require 'spec_helper'
 describe "Viewing an individual event" do
 
   it "shows the event's details" do
-    event = Event.create(name: "Learn some Ruby",
-                          location: "Vilnius",
-                          price: 10.00,
-                          description: "A fun and interactive introduction to Ruby event in Vilnius with a lot of great people to support your road to the Olympia",
-                          starts_at: "10.days.from_now")
+    event = Event.create(event_attributes(price: 10.00))
+
     visit event_url(event)
 
     expect(page).to have_text(event.name)
