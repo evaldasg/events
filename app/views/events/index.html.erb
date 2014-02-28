@@ -1,4 +1,5 @@
 <h1><%= pluralize(@events.size, 'Event') %></h1>
+<nav><%= link_to 'Add New Event', new_event_path %></nav>
 <p>Check out the following <%= pluralize(@events.size, 'event') %>:</p>
 
 
@@ -24,3 +25,4 @@
     </table>
   </article>
 <% end %>
+
