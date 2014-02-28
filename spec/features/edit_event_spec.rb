@@ -16,6 +16,13 @@ describe "Editing an event" do
     expect(find_field('Location').value).to eq(event.location)
     expect(find_field('Price').value).to eq("20")
     # expect(find_field('Starts at').value).to eq(event.starts_at)
+    fill_in 'Name', with: "Updated Event Name"
+
+    click_button 'Update Event'
+
+    expect(current_path).to eq(event_path(event))
+
+    expect(page).to have_text('Updated Event Name')
   end
 
 end
