@@ -14,7 +14,7 @@ describe "Navigation events" do
   end
 
   it "allows navigation from the listing page to the detail page" do
-    event = Event.create(event_attributes)
+    event = Event.create(event_attributes(starts_at: 15.days.from_now))
 
     visit events_url
 
